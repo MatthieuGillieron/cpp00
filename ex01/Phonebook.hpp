@@ -8,9 +8,12 @@
 
 /*
 
+[OK]
 on a besoin d'avoir un tableau de 8 contact
 si > 8 ecraser le 1er
 
+
+[OK]
 ADD : sauvegarder un nouveau contact
 Si l'utilisateur entre cette commande, il est invité à saisir les informations du nouveau contact champ par champ.
 Une fois que tous les champs ont été complétés, ajoute le contact à l'annuaire
@@ -25,6 +28,8 @@ il doit être tronqué et le dernier caractère affichable doit être remplacé 
 Ensuite, demande à nouveau à l'utilisateur l'index de l'entrée à afficher. Si l'index est hors limites ou incorrect,
 définis un comportement pertinent. Sinon, affiche les informations du contact, un champ par ligne
 
+
+[OK]
 EXIT
 Le programme se ferme et les contacts sont perdus à jamais !
 
@@ -42,7 +47,7 @@ class Phonebook {
 
 	private :
 
-		Contact listeContact[8];
+		Contact listContact[8];
 		int		size;
 		int		insert;
 
