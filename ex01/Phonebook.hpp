@@ -53,7 +53,9 @@ class Phonebook {
 
 	public :
 
-		void	addContact();
+		void	addContact(std::string firstName, std::string name, std::string nickName,
+									std::string phoneNumber, std::string darkestsecret);
+
 		void	searchContact();
 
 		Phonebook(void);

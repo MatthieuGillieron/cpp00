@@ -14,7 +14,7 @@ Phonebook::~Phonebook(void) {
 
 //  ---- Methode ---- //
 
-void	addContact(std::string firstName, std::string name, std::string nickName,
+void	Phonebook::addContact(std::string firstName, std::string name, std::string nickName,
 					std::string phoneNumber, std::string darkestSecret) {
 
 	
@@ -23,7 +23,7 @@ void	addContact(std::string firstName, std::string name, std::string nickName,
 	newContact.setFirstName(firstName);
 	newContact.setName(name);
 	newContact.setNickName(nickName);
-	newContact.setPhonenumber(phoneNumber);
+	newContact.setPhoneNumber(phoneNumber);
 	newContact.setDarkestSecret(darkestSecret);
 
 	listContact[insert] = newContact;
