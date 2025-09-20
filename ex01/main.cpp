@@ -14,6 +14,8 @@ int main() {
 	new_contact.setPhoneNumber("07070707");
 	new_contact.setDarkestSecret("sniffeur2baltrou");
 
+std::cout << "Test pour ajouter conatact" << std::endl;
+std::cout << "\n";
 
 	std::cout << "first name: " << new_contact.getFirstName() << std::endl;
 	std::cout << "name: " << new_contact.getName() << std::endl;
@@ -21,8 +23,13 @@ int main() {
 	std::cout << "phone number: " << new_contact.getPhoneNumber() << std::endl;
 	std::cout << "secret: " << new_contact.getDarkestSecret() << std::endl;
 
+std::cout << "Test pour afficher annuaire" << std::endl;
+std::cout << "\n";
+
 
 	phoneBook.addContact("bob", "eponge", "carrer", "12345", "aime escargot");
+	phoneBook.addContact("Jean", "Dupont", "Jaja", "0123", "secret1");
+	phoneBook.addContact("Marie", "Martin", "Mimi", "0456", "secret2");
 	phoneBook.searchContact();
 }
 /*

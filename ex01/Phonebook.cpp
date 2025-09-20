@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <iomanip>
 #include "Phonebook.hpp"
 
 
@@ -45,16 +46,26 @@ void	Phonebook::searchContact() {
 		return;
 	}
 
+ std::cout << std::setw(10) << std::right << "index" << "|"
+              << std::setw(10) << std::right << "first name" << "|"
+              << std::setw(10) << std::right << "last name" << "|"
+              << std::setw(10) << std::right << "nickname" << "|"
+              << std::endl;
+
+
 	for (int i = 0; i < size; i++) {
 			
-		std::cout << "contact: " << i <<std::endl;
+		std::cout << std::setw(10) << std::right << i << "|"
+		<< std::setw(10) << std::right << listContact[i].getFirstName() << "|"
+		<< std::setw(10) << std::right << listContact[i].getName() << "|"
+		<< std::setw(10) << std::right << listContact[i].getNickName() << std::endl;
 	}
 }
 
-	// 2. afficher tab
 
 
-
+	// 2. afficher tableau
+	// - penser au troncage > 10 -> .
 
 	// 3. demander index
 
