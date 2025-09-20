@@ -5,6 +5,9 @@
 
 Phonebook::Phonebook(void) {
 
+	size = 0;
+	insert = 0;
+
 }
 
 Phonebook::~Phonebook(void) {
@@ -35,6 +38,25 @@ void	Phonebook::addContact(std::string firstName, std::string name, std::string 
 }
 
 
-void	searchContact() {
+void	Phonebook::searchContact() {
 
+	if (size == 0) {
+		std::cout << "No contact available" << std::endl;
+		return;
+	}
+
+	for (int i = 0; i < size; i++) {
+			
+		std::cout << "contact: " << i <<std::endl;
+	}
 }
+
+	// 2. afficher tab
+
+
+
+
+	// 3. demander index
+
+	// 4. afficher details
+

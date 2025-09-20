@@ -21,6 +21,10 @@ int main() {
 	std::cout << "phone number: " << new_contact.getPhoneNumber() << std::endl;
 	std::cout << "secret: " << new_contact.getDarkestSecret() << std::endl;
 
+
+	phoneBook.addContact("bob", "eponge", "carrer", "12345", "aime escargot");
+	phoneBook.searchContact();
+}
 /*
 while (true) {
 	
@@ -35,4 +39,3 @@ return 0;
 
 */
 
-}
