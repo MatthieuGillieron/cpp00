@@ -8,7 +8,6 @@ Phonebook::Phonebook(void) {
 
 	size = 0;
 	insert = 0;
-
 }
 
 Phonebook::~Phonebook(void) {
@@ -16,7 +15,6 @@ Phonebook::~Phonebook(void) {
 }
 
 
-//  ---- Methode ---- //
 
 void	Phonebook::addContact(std::string firstName, std::string name, std::string nickName,
 					std::string phoneNumber, std::string darkestSecret) {
@@ -39,6 +37,15 @@ void	Phonebook::addContact(std::string firstName, std::string name, std::string 
 }
 
 
+
+std::string Phonebook::truncString(std::string str) {
+	if (str.length() > 10) {
+		return str.substr(0, 9) + ".";
+	}
+	return str;
+}
+
+
 void	Phonebook::searchContact() {
 
 	if (size == 0) {
@@ -56,9 +63,9 @@ void	Phonebook::searchContact() {
 	for (int i = 0; i < size; i++) {
 			
 		std::cout << std::setw(10) << std::right << i << "|"
-		<< std::setw(10) << std::right << listContact[i].getFirstName() << "|"
-		<< std::setw(10) << std::right << listContact[i].getName() << "|"
-		<< std::setw(10) << std::right << listContact[i].getNickName() << std::endl;
+		<< std::setw(10) << std::right << truncString(listContact[i].getFirstName()) << "|"
+		<< std::setw(10) << std::right << truncString(listContact[i].getName()) << "|"
+		<< std::setw(10) << std::right << truncString(listContact[i].getNickName()) << std::endl;
 	}
 }
 

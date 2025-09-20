@@ -30,6 +30,7 @@ std::cout << "\n";
 	phoneBook.addContact("bob", "eponge", "carrer", "12345", "aime escargot");
 	phoneBook.addContact("Jean", "Dupont", "Jaja", "0123", "secret1");
 	phoneBook.addContact("Marie", "Martin", "Mimi", "0456", "secret2");
+	phoneBook.addContact("Enormeprenom2test", "Martin", "Mistrigriiiiiiii", "0456", "secret2");
 	phoneBook.searchContact();
 }
 /*
