@@ -67,14 +67,22 @@ void	Phonebook::searchContact() {
 		<< std::setw(10) << std::right << truncString(listContact[i].getName()) << "|"
 		<< std::setw(10) << std::right << truncString(listContact[i].getNickName()) << std::endl;
 	}
+
+	int index;
+
+	std::cout << "Enter index: ";
+	std::cin >> index;
+
+	if (index > size || index < 0 ) {
+		
+		std::cout << "Invalid index!" << std::endl;
+		return;
+	}
+	
+	std::cout << "First name: " << listContact[index].getFirstName() << std::endl;
+	std::cout << "Name: " << listContact[index].getName() << std::endl;
+	std::cout << "Nick name: " << listContact[index].getNickName() << std::endl;
+	std::cout << "Phone number: " << listContact[index].getPhoneNumber() << std::endl;
+	std::cout << "Darkest secret: " << listContact[index].getDarkestSecret() << std::endl;
+
 }
-
-
-
-	// 2. afficher tableau
-	// - penser au troncage > 10 -> .
-
-	// 3. demander index
-
-	// 4. afficher details
-
