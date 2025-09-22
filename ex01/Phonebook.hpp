@@ -19,7 +19,7 @@ class Phonebook {
 									std::string phoneNumber, std::string darkestsecret);
 		void	addContactFromInput();
 
-		std::string	getValidInput(std::string prompt);
+
 		std::string	truncString(std::string str);						
 		void	searchContact();
 

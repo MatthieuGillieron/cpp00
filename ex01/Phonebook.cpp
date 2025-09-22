@@ -1,6 +1,8 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cctype>
+#include <cstdlib>
 #include "Phonebook.hpp"
 
 
@@ -30,7 +32,7 @@ void	Phonebook::addContact(std::string firstName, std::string name, std::string 
 }
 
 
-std::string Phonebook::getValidInput(std::string prompt) {
+std::string getValidInput(std::string prompt) {
 	std::string input;
 	
 	while (true) {
@@ -44,6 +46,35 @@ std::string Phonebook::getValidInput(std::string prompt) {
 	}
 }
 
+bool isValidIndex(std::string str, int &index) {
+	if (str.length() != 1 || !std::isdigit(str[0]))
+		return false;
+	
+	index = str[0] - '0';
+	return (index >= 0 && index <= 7);
+}
+
+std::string getValidPhoneNumber(std::string prompt) {
+	std::string input;
+	
+	while (true) {
+		input = getValidInput(prompt);
+		
+		bool isValid = true;
+		for (size_t i = 0; i < input.length(); i++) {
+			if (!std::isdigit(input[i])) {
+				isValid = false;
+				break;
+			}
+		}
+		
+		if (isValid)
+			return input;
+		
+		std::cout << "Phone number must contain only digits. Please try again." << std::endl;
+	}
+}
+
 void Phonebook::addContactFromInput() {
 
     std::string firstName, lastName, nickName, phoneNumber, darkestSecret;
@@ -51,7 +82,7 @@ void Phonebook::addContactFromInput() {
     firstName = getValidInput("Enter first name: ");
     lastName = getValidInput("Enter last name: ");
     nickName = getValidInput("Enter nickname: ");
-    phoneNumber = getValidInput("Enter phone number: ");
+    phoneNumber = getValidPhoneNumber("Enter phone number: ");
     darkestSecret = getValidInput("Enter darkest secret: ");
     
     addContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
@@ -99,11 +130,12 @@ void	Phonebook::searchContact() {
 	}
 
 	int index;
+	std::string indexStr;
+	
 	std::cout << "Enter index: ";
-	std::cin >> index;
-
-	if (index > size || index < 0 ) {
-		
+	std::cin >> indexStr;
+	
+	if (!isValidIndex(indexStr, index) || index >= size || index < 0) {
 		std::cout << "Invalid index!" << std::endl;
 		return;
 	}
