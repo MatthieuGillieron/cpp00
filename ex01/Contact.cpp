@@ -1,16 +1,11 @@
 #include <iostream>
 #include "Contact.hpp"
 
-Contact::Contact(void) {
-	// Code du constructeur
-}
-
-Contact::~Contact(void) {
-	// Code du destructeur
-}
+Contact::Contact(void) {}
+Contact::~Contact(void) {}
 
 
-// ------ setter ------ //
+// ------ setter ------
 
 void Contact::setFirstName(std::string firstName) {
 
@@ -36,7 +31,7 @@ void Contact::setDarkestSecret(std::string darkestSecret) {
 
 
 
-// ------ getter ------ //
+// ------ getter ------
 
 std::string Contact::getFirstName() const {
 	return firstName;

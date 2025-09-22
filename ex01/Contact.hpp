@@ -4,24 +4,6 @@
 
 #include <iostream>
 
-/*
-
-- prenom
-- nom
-- surnom
-- tel
-- secret
-
-diff en public et prive ?
-instance dynamique ?
-
-this ?
-accesor?
-
-
-*/
-
-
 class Contact {
 
 private:

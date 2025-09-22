@@ -4,15 +4,8 @@
 #include "Phonebook.hpp"
 
 
-Phonebook::Phonebook(void) {
-
-	size = 0;
-	insert = 0;
-}
-
-Phonebook::~Phonebook(void) {
-	
-}
+Phonebook::Phonebook(void) { size = 0; insert = 0; }
+Phonebook::~Phonebook(void) {}
 
 
 
@@ -36,14 +29,51 @@ void	Phonebook::addContact(std::string firstName, std::string name, std::string 
 	insert = (insert + 1) % 8;
 }
 
+void Phonebook::addContactFromInput() {
+
+    std::string firstName, lastName, nickName, phoneNumber, darkestSecret;
+    
+    std::cout << "Enter first name: ";
+    std::cin >> firstName;
+    
+    std::cout << "Enter last name: ";
+    std::cin >> lastName;
+    
+    std::cout << "Enter nickname: ";
+    std::cin >> nickName;
+    
+    std::cout << "Enter phone number: ";
+    std::cin >> phoneNumber;
+    
+    std::cout << "Enter darkest secret: ";
+    std::cin >> darkestSecret;
+
+    
+    addContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
+    
+    std::cout << "Contact added successfully!" << std::endl;
+}
+
 
 
 std::string Phonebook::truncString(std::string str) {
+
 	if (str.length() > 10) {
 		return str.substr(0, 9) + ".";
 	}
 	return str;
 }
+
+
+void	displayHeader() { 
+
+	std::cout << std::setw(10) << std::right << "index" << "|"
+	<< std::setw(10) << std::right << "first name" << "|"
+	<< std::setw(10) << std::right << "last name" << "|"
+	<< std::setw(10) << std::right << "nickname" << "|"
+	<< std::endl;
+}
+
 
 
 void	Phonebook::searchContact() {
@@ -53,23 +83,17 @@ void	Phonebook::searchContact() {
 		return;
 	}
 
- std::cout << std::setw(10) << std::right << "index" << "|"
-              << std::setw(10) << std::right << "first name" << "|"
-              << std::setw(10) << std::right << "last name" << "|"
-              << std::setw(10) << std::right << "nickname" << "|"
-              << std::endl;
-
+	displayHeader();
 
 	for (int i = 0; i < size; i++) {
 			
 		std::cout << std::setw(10) << std::right << i << "|"
-		<< std::setw(10) << std::right << truncString(listContact[i].getFirstName()) << "|"
-		<< std::setw(10) << std::right << truncString(listContact[i].getName()) << "|"
-		<< std::setw(10) << std::right << truncString(listContact[i].getNickName()) << std::endl;
+			<< std::setw(10) << std::right << truncString(listContact[i].getFirstName()) << "|"
+			<< std::setw(10) << std::right << truncString(listContact[i].getName()) << "|"
+			<< std::setw(10) << std::right << truncString(listContact[i].getNickName()) << std::endl;
 	}
 
 	int index;
-
 	std::cout << "Enter index: ";
 	std::cin >> index;
 
