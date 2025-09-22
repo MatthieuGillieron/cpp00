@@ -29,25 +29,30 @@ void	Phonebook::addContact(std::string firstName, std::string name, std::string 
 	insert = (insert + 1) % 8;
 }
 
+
+std::string Phonebook::getValidInput(std::string prompt) {
+	std::string input;
+	
+	while (true) {
+		std::cout << prompt;
+		std::getline(std::cin, input);
+		
+		if (!input.empty())
+			return input;
+		
+		std::cout << "Input cannot be empty. Please try again." << std::endl;
+	}
+}
+
 void Phonebook::addContactFromInput() {
 
     std::string firstName, lastName, nickName, phoneNumber, darkestSecret;
     
-    std::cout << "Enter first name: ";
-    std::cin >> firstName;
-    
-    std::cout << "Enter last name: ";
-    std::cin >> lastName;
-    
-    std::cout << "Enter nickname: ";
-    std::cin >> nickName;
-    
-    std::cout << "Enter phone number: ";
-    std::cin >> phoneNumber;
-    
-    std::cout << "Enter darkest secret: ";
-    std::cin >> darkestSecret;
-
+    firstName = getValidInput("Enter first name: ");
+    lastName = getValidInput("Enter last name: ");
+    nickName = getValidInput("Enter nickname: ");
+    phoneNumber = getValidInput("Enter phone number: ");
+    darkestSecret = getValidInput("Enter darkest secret: ");
     
     addContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
     

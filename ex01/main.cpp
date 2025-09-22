@@ -14,8 +14,10 @@ while (true) {
 	std::cin >> command;
 
 
-		if (command == "ADD")
+		if (command == "ADD") {
+			std::cin.ignore();
 			phoneBook.addContactFromInput();
+		}
 
 
 		else if (command == "SEARCH")
