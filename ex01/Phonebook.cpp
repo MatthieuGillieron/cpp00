@@ -10,27 +10,7 @@ Phonebook::Phonebook(void) { size = 0; insert = 0; }
 Phonebook::~Phonebook(void) {}
 
 
-
-void	Phonebook::addContact(std::string firstName, std::string name, std::string nickName,
-					std::string phoneNumber, std::string darkestSecret) {
-
-	
-	Contact newContact;
-	
-	newContact.setFirstName(firstName);
-	newContact.setName(name);
-	newContact.setNickName(nickName);
-	newContact.setPhoneNumber(phoneNumber);
-	newContact.setDarkestSecret(darkestSecret);
-
-	listContact[insert] = newContact;
-
-	if (size < 8)
-		size++;
-	
-	insert = (insert + 1) % 8;
-}
-
+// PARSING
 
 std::string getValidInput(std::string prompt) {
 	std::string input;
@@ -45,6 +25,7 @@ std::string getValidInput(std::string prompt) {
 		std::cout << "Input cannot be empty. Please try again." << std::endl;
 	}
 }
+
 
 bool isValidIndex(std::string str, int &index) {
 	if (str.length() != 1 || !std::isdigit(str[0]))
@@ -74,6 +55,31 @@ std::string getValidPhoneNumber(std::string prompt) {
 		std::cout << "Phone number must contain only digits. Please try again." << std::endl;
 	}
 }
+
+
+// METHODE
+
+void	Phonebook::addContact(std::string firstName, std::string name, std::string nickName,
+					std::string phoneNumber, std::string darkestSecret) {
+
+	
+	Contact newContact;
+	
+	newContact.setFirstName(firstName);
+	newContact.setName(name);
+	newContact.setNickName(nickName);
+	newContact.setPhoneNumber(phoneNumber);
+	newContact.setDarkestSecret(darkestSecret);
+
+	listContact[insert] = newContact;
+
+	if (size < 8)
+		size++;
+	
+	insert = (insert + 1) % 8;
+}
+
+
 
 void Phonebook::addContactFromInput() {
 
