@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:11:42 by mg                #+#    #+#             */
-/*   Updated: 2025/09/26 14:04:26 by mg               ###   ########.fr       */
+/*   Updated: 2025/09/26 14:12:35 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Account::Account(int initial_deposit) :
 
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
-	std::cout << "amount" << _amount << ";";
+	std::cout << "amount:" << _amount << ";";
 	std::cout << "created" << std::endl;
 }
 
@@ -66,9 +66,12 @@ int Account::getNbWithdrawals(void) {
 }
 
 void	Account::displayAccountsInfos(void) {
-	std::cout << "Account:" << _nbAccounts << ";";
-	std::cout << "Amout:" << _totalAmount << ";";
-	std::cout << "Deposit:" << _totalNbDeposits << std::endl;
+	
+	_displayTimestamp();
+	std::cout << "accounts:" << _nbAccounts << ";";
+	std::cout << "total:" << _totalAmount << ";";
+	std::cout << "deposit:" << _totalNbDeposits << ";";
+	std::cout << "withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
 
@@ -87,16 +90,14 @@ void	Account::_displayTimestamp() {
 	
 }
 
-// [A/D/M_H/M/S] index:0;p_amount:100;deposit:50;amount:150;nb_deposits:1
 
-// [19920104_091532] index:1;amount:54;deposits:0;withdrawals:0
 
 void	Account::makeDeposit(int deposit) {
 
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
 	std::cout << "p_amount:" << _amount << ";";
-	std::cout << "deposits:" << deposit << ";";
+	std::cout << "deposit:" << deposit << ";";
 
 	_amount += deposit;
 	_nbDeposits++;
@@ -104,7 +105,7 @@ void	Account::makeDeposit(int deposit) {
 	_totalAmount += deposit;
 
 	std::cout << "amount:" << _amount << ";";
-	std::cout << "nb_deposit:" << _nbDeposits << std::endl;
+	std::cout << "nb_deposits:" << _nbDeposits << std::endl;
 }
 
 bool Account::makeWithdrawal(int withdrawal) {
