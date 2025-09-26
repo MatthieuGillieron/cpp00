@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:11:42 by mg                #+#    #+#             */
-/*   Updated: 2025/09/26 14:12:35 by mg               ###   ########.fr       */
+/*   Updated: 2025/09/26 21:23:35 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ Account::~Account(void) {
 
 
 
-//step 1
+// GETTERS
+
 int	Account::getNbAccounts(void) {
 	return _nbAccounts;
 }
@@ -75,7 +76,7 @@ void	Account::displayAccountsInfos(void) {
 }
 
 
-//step 2
+// METHODE
 
 void	Account::_displayTimestamp() {
 
@@ -108,6 +109,8 @@ void	Account::makeDeposit(int deposit) {
 	std::cout << "nb_deposits:" << _nbDeposits << std::endl;
 }
 
+
+
 bool Account::makeWithdrawal(int withdrawal) {
 	
 	_displayTimestamp();
@@ -133,9 +136,13 @@ bool Account::makeWithdrawal(int withdrawal) {
 	return true;
 }
 
+
+
+
 int	Account::checkAmount() const {
 	return _amount;
 }
+
 
 
 void	Account::displayStatus() const {
