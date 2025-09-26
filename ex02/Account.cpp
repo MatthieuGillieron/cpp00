@@ -6,12 +6,14 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:11:42 by mg                #+#    #+#             */
-/*   Updated: 2025/09/23 13:50:05 by mg               ###   ########.fr       */
+/*   Updated: 2025/09/26 11:38:11 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
+#include <iomanip>
 
 
 int	Account::_nbAccounts = 0;
@@ -30,7 +32,11 @@ _nbWithdrawals(0)
 	_totalAmount += initial_deposit;
 }
 
-Account::~Account(void) {}
+Account::~Account(void) {
+	Account::_displayTimestamp();
+	std::cout << "index:" << _accountIndex
+	<< "amount:" << _amount << std::endl;
+}
 
 
 
@@ -60,3 +66,36 @@ void	Account::displayAccountsInfos(void) {
 
 
 //step 2
+
+void	Account::_displayTimestamp() {
+
+	time_t timestamp = time(NULL);
+	struct tm datetime = *localtime(&timestamp);
+	std::cout << "[" << datetime.tm_year + 1900;
+	std::cout << std::setw(2) << std::setfill('0') << datetime.tm_mon + 1;
+	std::cout << std::setw(2) << std::setfill('0') << datetime.tm_mday << "_";
+	std::cout << std::setw(2) << std::setfill('0') << datetime.tm_hour;
+	std::cout << std::setw(2) << std::setfill('0') << datetime.tm_min;
+	std::cout << std::setw(2) << std::setfill('0') << datetime.tm_sec << "] ";
+	
+}
+
+// [A/D/M_H/M/S] index:0;p_amount:100;deposit:50;amount:150;nb_deposits:1
+
+// [19920104_091532] index:1;amount:54;deposits:0;withdrawals:0
+
+void	Account::makeDeposit(int deposit) {
+
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";";
+	std::cout << "p_amount:" << _amount << ";";
+	std::cout << "deposit:" << deposit << ";";
+
+	_amount += deposit;
+	_nbDeposits++;
+	_totalNbDeposits++;
+	_totalAmount += deposit;
+
+	std::cout << "amount:" << _amount << ";";
+	std::cout << "nb_deposit:" << _nbDeposits << ";" << std::endl;
+}
