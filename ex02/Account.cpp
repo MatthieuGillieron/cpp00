@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:11:42 by mg                #+#    #+#             */
-/*   Updated: 2025/09/26 13:57:24 by mg               ###   ########.fr       */
+/*   Updated: 2025/09/26 14:04:26 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,26 @@ int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
 
-Account::Account(int initial_deposit)
-:	_accountIndex(_nbAccounts),
-_amount(initial_deposit),
-_nbDeposits(0),
-_nbWithdrawals(0)
+Account::Account(int initial_deposit) :
+	_accountIndex(_nbAccounts),
+	_amount(initial_deposit),
+	_nbDeposits(0),
+	_nbWithdrawals(0)
 {
 	_nbAccounts++;
 	_totalAmount += initial_deposit;
+
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";";
+	std::cout << "amount" << _amount << ";";
+	std::cout << "created" << std::endl;
 }
 
 Account::~Account(void) {
 	Account::_displayTimestamp();
-	std::cout << "index:" << _accountIndex
-	<< "amount:" << _amount << std::endl;
+	std::cout << "index:" << _accountIndex << ";";
+	std::cout << "amount:" << _amount << ";";
+	std::cout << "closed" << std::endl;
 }
 
 
