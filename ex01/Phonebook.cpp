@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/26 21:24:31 by mg                #+#    #+#             */
+/*   Updated: 2025/09/26 21:25:44 by mg               ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include <iostream>
 #include <iomanip>
@@ -27,6 +39,7 @@ std::string getValidInput(std::string prompt) {
 }
 
 
+
 bool isValidIndex(std::string str, int &index) {
 	if (str.length() != 1 || !std::isdigit(str[0]))
 		return false;
@@ -34,6 +47,8 @@ bool isValidIndex(std::string str, int &index) {
 	index = str[0] - '0';
 	return (index >= 0 && index <= 7);
 }
+
+
 
 std::string getValidPhoneNumber(std::string prompt) {
 	std::string input;
@@ -105,6 +120,7 @@ std::string Phonebook::truncString(std::string str) {
 	}
 	return str;
 }
+
 
 
 void	displayHeader() { 
