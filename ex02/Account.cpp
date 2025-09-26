@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:11:42 by mg                #+#    #+#             */
-/*   Updated: 2025/09/26 13:54:50 by mg               ###   ########.fr       */
+/*   Updated: 2025/09/26 13:56:26 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	Account::makeDeposit(int deposit) {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
 	std::cout << "p_amount:" << _amount << ";";
-	std::cout << "deposit:" << deposit << ";";
+	std::cout << "deposits:" << deposit << ";";
 
 	_amount += deposit;
 	_nbDeposits++;
