@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:11:42 by mg                #+#    #+#             */
-/*   Updated: 2025/09/26 13:56:26 by mg               ###   ########.fr       */
+/*   Updated: 2025/09/26 13:57:24 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	Account::makeDeposit(int deposit) {
 	_totalAmount += deposit;
 
 	std::cout << "amount:" << _amount << ";";
-	std::cout << "nb_deposit:" << _nbDeposits << ";" << std::endl;
+	std::cout << "nb_deposit:" << _nbDeposits << std::endl;
 }
 
 bool Account::makeWithdrawal(int withdrawal) {
