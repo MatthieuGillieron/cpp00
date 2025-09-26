@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:11:42 by mg                #+#    #+#             */
-/*   Updated: 2025/09/26 13:50:48 by mg               ###   ########.fr       */
+/*   Updated: 2025/09/26 13:54:50 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ int Account::getNbWithdrawals(void) {
 }
 
 void	Account::displayAccountsInfos(void) {
-	std::cout << "Account: " << _nbAccounts << "Amout: " << _totalAmount
-				<< "Deposit: " << _totalNbDeposits << std::endl;
+	std::cout << "Account:" << _nbAccounts << ";";
+	std::cout << "Amout:" << _totalAmount << ";";
+	std::cout << "Deposit:" << _totalNbDeposits << std::endl;
 }
 
 
